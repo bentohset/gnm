@@ -12,3 +12,6 @@ hosts.yaml
 
 # Ignore dist folder
 dist/
+
+
+.github

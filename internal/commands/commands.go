@@ -40,5 +40,13 @@ func InitCommands(logger *logger.AppLogger, storage *storage.YAMLStorage) []cli.
 				return Delete(c, logger, storage)
 			},
 		},
+		{
+			Name:    "code",
+			Aliases: []string{"vsc"},
+			Usage:   "Opens VSCode in remote mode for easy access",
+			Action: func(c *cli.Context) error {
+				return Code(c, logger, storage)
+			},
+		},
 	}
 }

@@ -1,24 +1,68 @@
-Feature List
-- manage ssh key
+# GNM - A Go Network Manager
+GNM is a simple network manager - it can help you with managing VPN and SSH connections.
+
+## Features
+- create, list, delete ssh credentials
 - generate ssh keys from credentials
 - copy keys to remote host
-- ssh into ip with keys
+- simple command to ssh into remote server
+- open vscode ssh remote server
+
+Pending:
 - connect vpn
 - create macros (connect vpn + ssh)
 - transfer existing keys from .ssh to hosts.yaml
 
-Storage
-- yaml config file
-  - stores hosts, key filepath in .shh folder
-- log file
+
+## Installation
+Pre-requisites:
+- OpenSSH installed
 
 
-Commands:
-`gnm ls``
-`gnm create`
-- optional flags: a, i, d
-- if alias not provided, use hostname as alias
-- if keypath provided, store key dont generate key pair
-- else generate key pair (ssh-keygen) and ssh-copy-id to the server
-`gnm del [alias]`
-`gnm use [alias]`
+**Homebrew**
+```
+brew tap
+brew install
+```
+
+**With Go**
+```
+go get
+```
+
+**Manually**
+Download from releases
+
+
+## Commands:
+**List all configured hosts**
+```
+gnm ls
+gnm l
+```
+
+**Create a new host**
+```
+gnm create
+gnm c
+```
+
+**Delete a host**
+```
+gnm del [alias]
+gnm d [alias]
+```
+
+**SSH into a host**
+```
+gnm use [alias]
+gnm u [alias]
+```
+
+**Open VSCode remote SSH**
+- ensure vscode is installed and env path is configured
+```
+gnm code [alias]
+gnm vsc [alias]
+```
+
