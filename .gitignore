@@ -1,2 +1,14 @@
+# App data files
 *.log
 hosts.yaml
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.DS_STORE
+
+# Ignore dist folder
+dist/
