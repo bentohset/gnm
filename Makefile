@@ -4,6 +4,11 @@ BINARY_NAME = gnm
 DIST_PATH=./dist
 LD_FLAGS = -ldflags "-X main.Version=$(BUILD_VERSION)"
 
+.PHONY: test
+test:
+	@echo 'Running unit tests'
+	go test -coverpkg=./internal/... -race -vet=off -count=1 -covermode atomic ./...
+
 ## build: create binary in ./dist folder for your current platform. Use this option if you build it for personal use.
 .PHONY: build
 build:
