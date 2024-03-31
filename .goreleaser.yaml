@@ -16,7 +16,8 @@ before:
     - go generate ./...
 
 builds:
-  - env:
+  - main: ./cmd/gnm 
+    env:
       - CGO_ENABLED=0
     goos:
       - linux
@@ -24,6 +25,7 @@ builds:
       - darwin
     goarch:
       - arm64
+      - arm
       - amd64
 
 archives:
@@ -40,6 +42,17 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
+snapshot:
+  # Allows you to change the name of the generated snapshot
+  #
+  # Note that some pipes require this to be semantic version compliant (nfpm,
+  # for example).
+  #
+  # Default is `{{ .Version }}-SNAPSHOT-{{.ShortCommit}}`.
+  name_template: '{{ incpatch .Version }}-dev'
+
+checksum:
+  name_template: 'checksums.txt'
 
 changelog:
   sort: asc
