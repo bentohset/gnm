@@ -21,17 +21,22 @@ Pre-requisites:
 
 **Homebrew**
 ```
-brew tap
-brew install
+brew tap bentohset/tap
+brew install gnm
+```
+or
+
+```
+brew install bentohset/tap/gnm
 ```
 
-**With Go**
+<!-- **With Go**
 ```
 go get
-```
+``` -->
 
 **Manually**
-Download from releases
+Download from [releases](https://github.com/bentohset/gnm/releases/latest)
 
 
 ## Commands:
@@ -66,3 +71,16 @@ gnm code [alias]
 gnm vsc [alias]
 ```
 
+
+## TODO list
+App:
+- feature: open vscode remote ssh
+- feature: ssh-copy-id, should be a separate command or in create?
+- feature: connect vpn
+- feature: transfer existing keys in .ssh to hosts.yaml
+
+Devops:
+- automate release tagging
+  - write a script/Makefile? or explore alternatives
+  - should tag the commit and push with version
+  - manage versioning in the codebase (in /internal/constants, .github/workflows and .goreleaser.yaml)
