@@ -60,3 +60,10 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
+
+brews:
+- name: gnm
+  homepage: https://github.com/bentohset/homebrew-tap
+  tap:
+    owner: bentohset
+    name: homebrew-tap
