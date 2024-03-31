@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"path/filepath"
@@ -60,14 +59,10 @@ func main() {
 
 func parseArgs() {
 	if len(os.Args) == 1 {
-		printLogo()
+		constants.PrintLogo()
 	} else if len(os.Args) == 2 {
 		if os.Args[1] == "-h" || os.Args[1] == "--help" || os.Args[1] == "h" || os.Args[1] == "help" {
-			printLogo()
+			constants.PrintLogo()
 		}
 	}
-}
-
-func printLogo() {
-	fmt.Println("GNM")
 }

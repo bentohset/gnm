@@ -1,5 +1,7 @@
 package constants
 
+import "fmt"
+
 const (
 	// Name is the program name
 	Name = "gnm"
@@ -12,10 +14,16 @@ const (
 	// CrossSymbol is the code for check symbol
 	CrossSymbol = "\u2716 "
 
-	// PublicKey is the default name of SSH public key
-	PublicKey = "id_rsa.pub"
-	// PrivateKey is the default name of SSH private key
-	PrivateKey = "id_rsa"
-	// DefaultKey is the default alias name of SSH key
-	DefaultKey = "default"
+	Logo = `
+  _______ .__   __. .___  ___. 
+ /  _____||  \ |  | |   \/   | 
+|  |  __  |   \|  | |  \  /  | 
+|  | |_ | |  .    | |  |\/|  | 
+|  |__| | |  |\   | |  |  |  | 
+ \______| |__| \__| |__|  |__| 
+	`
 )
+
+func PrintLogo() {
+	fmt.Println(Logo)
+}
